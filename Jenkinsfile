@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-               sh'python app.py'
+               echo'build is being done'
             }
         }
         stage('Test'){
