@@ -1,17 +1,22 @@
-  pipeline {
-        agent any
-           stages {
-              stage('Build') { 
-                 steps { 
-                    sh 'python app.py' 
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'make' 
             }
         }
-        stages {
-            stage('Test') {
-                steps {
-                    echo 'Hello World ...'
-                }
+        stage('Test'){
+            steps {
+                sh 'make check'
+                junit 'reports/**/*.xml' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'make publish'
             }
         }
     }
- 
+}
