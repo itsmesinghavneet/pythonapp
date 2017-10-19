@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-               echo 'test is being done'
+               echo 'build is being done'
             }
         }
         stage('Test'){
@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'make publish'
+                echo 'Deploy is being done'
             }
         }
     }
