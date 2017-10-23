@@ -6,18 +6,19 @@ pipeline {
             steps { 
                echo'build is being done'
                 sh 'python app.py'
-               
-            }
-        }
-        stage('Test'){
-            steps {
-                echo 'test is being done'
                 sh '''
                 ./my_script.sh &
                         PID=$!
                             sleep 2
                     kill $PD 
                     ''' 
+               
+            }
+        }
+        stage('Test'){
+            steps {
+                echo 'test is being done'
+                
             }
         }
         stage('Deploy') {
