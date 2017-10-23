@@ -12,10 +12,12 @@ pipeline {
         stage('Test'){
             steps {
                 echo 'test is being done'
-                sh './my_script.sh &'''
+                sh '''
+                ./my_script.sh &
                         PID=$!
                             sleep 2
-                    kill $PD ''' '
+                    kill $PD 
+                    ''' 
             }
         }
         stage('Deploy') {
