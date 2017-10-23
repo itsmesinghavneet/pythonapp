@@ -5,14 +5,7 @@ pipeline {
         stage('Build') { 
             steps { 
                echo'build is being done'
-                sh '''
-                    python app.py
-                     sleep 2
-                ./my_script.sh &
-                        PID=$!
-                            sleep 2
-                    kill $PD 
-                    ''' 
+               
                
             }
         }
